@@ -1,13 +1,13 @@
 package L4andL5;
-public class hello{
+ class hello{
     public static void main(String[] args) {
         
         System.out.println("hello World");
         System.out.println("hello1");
      
     }
-}
-class ram{
+ }
+  class ram{
     public static void main(String[] args) {
         System.out.println("hello ram");
     }
