@@ -73,6 +73,7 @@ public class DecimalToBinary {
             }
             power/=2;
             num=num*num;
+            int a=90;
         }
         System.out.println(res);
     }
