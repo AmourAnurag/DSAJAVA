@@ -1,4 +1,4 @@
-package DSAJAVA.L16;
+package DSAJAVA.L16andL17;
 
 import java.util.Scanner;
 
@@ -11,6 +11,7 @@ public class L16 {
         Scanner sc = new Scanner(System.in);
         int arr[] = new int[5];
 
+        // System.out.println("Enter  array element :");
         // for (int i = 0; i < arr.length; i++) {
         //     arr[i] = sc.nextInt();
         // }
@@ -23,12 +24,14 @@ public class L16 {
 
         //2d array
         int arr1[][]=new int[5][4];
+        System.out.println("Enter 2d array element :");
         for (int index = 0; index < arr1.length; index++) {
            for (int j = 0; j <arr1[index].length; j++) {
              arr1[index][j]=sc.nextInt();
            }
         }
-        obj.print2dArray(arr1);
+        
+        // obj.print2dArray(arr1);
         // obj.insert2dArray(arr1, 2, 3, 1000);
         obj.update2dArray(arr1, 3, 2, 5555);
         obj.print2dArray(arr1);
