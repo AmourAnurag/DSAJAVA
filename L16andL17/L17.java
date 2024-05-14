@@ -11,7 +11,8 @@ public class L17 {
 
         int arr1[][]={{1,2,5,4,8},{4,8,9,7,16},{6,7,9,51,2},{9,8,7,5,6}};
         // obj.findElement2d(arr1,82);
-        obj.findMaxSubArray(arr1);
+        // obj.findMaxSubArray(arr1);
+       
     }
     void findElement(int arr[],int target){
         int index=-1;
