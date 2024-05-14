@@ -1,4 +1,4 @@
-package DSAJAVA.L18;
+package DSAJAVA.L18andL19;
 
 public class binarySearch {
     public static void main(String[] args) {
