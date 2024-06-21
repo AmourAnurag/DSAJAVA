@@ -1,4 +1,4 @@
-package DSAJAVA.L16andL17;
+package L16andL17;
 
 import java.util.Scanner;
 

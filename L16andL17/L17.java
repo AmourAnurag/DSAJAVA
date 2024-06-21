@@ -1,4 +1,4 @@
-package DSAJAVA.L16andL17;
+package L16andL17;
 
 public class L17 {
     public static void main(String[] args) {
