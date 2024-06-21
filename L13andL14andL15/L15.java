@@ -48,5 +48,6 @@ public class L15 {
         obj.swap(12, 10);
         int arr[]={1,2,7,6,7,3,2,6,1};
         System.out.println(obj.UniqueNumber(arr));
+        System.out.println(2&-1);
     }
 }

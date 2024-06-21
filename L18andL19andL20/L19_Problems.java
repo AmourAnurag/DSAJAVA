@@ -1,4 +1,4 @@
-package DSAJAVA.L18andL19;
+package DSAJAVA.L18andL19andL20;
 
 public class L19_Problems {
     public static void main(String[] args) {
