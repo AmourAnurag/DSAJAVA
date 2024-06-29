@@ -12,10 +12,11 @@ public class L39andL40 {
     public static void main(String []args){
         L39andL40 obj=new L39andL40();
         int ar[]={4,8,1,2,0,3,6};
+        int[] res=new int[ar.length];
         PrintArray(ar);
-        obj.BrickSort(ar);
+        //  res=obj.countSort(ar);
         System.out.println();
-        PrintArray(ar);
+        PrintArray(obj.countSort(ar));
 
     }
     void BubbleSort(int arr[]){
@@ -61,5 +62,39 @@ public class L39andL40 {
                 break;
             }
         }
+    }
+
+    int[] countSort(int[] arr){
+        int n=arr.length;
+        int k=-1;
+        int res[]=new int[n];
+        for(int i=0;i<n;i++){
+            if (arr[i]>k) {
+                k=arr[i];
+            }
+        }
+        if (k==-1) {
+           return arr; 
+        }
+        int countArray[]=new int[k+1];
+
+        //find the frequency of digits
+        for(int i=0;i<n;i++){
+            int index=arr[i];
+            countArray[index]++;
+        }
+
+        //find cumulative frequency
+        for(int i=1;i<=k;i++){
+            countArray[i]=countArray[i]+countArray[i-1];
+        }
+
+        //find sorted array
+        for(int i =n-1;i>=0;i--){
+            int val=arr[i];
+            int countVal=--countArray[val];
+            res[countVal]=val;
+        }
+        return res;
     }
 }
