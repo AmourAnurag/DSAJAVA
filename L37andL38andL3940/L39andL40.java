@@ -12,11 +12,12 @@ public class L39andL40 {
     public static void main(String []args){
         L39andL40 obj=new L39andL40();
         int ar[]={4,8,1,2,0,3,6};
-        int[] res=new int[ar.length];
+        
         PrintArray(ar);
         //  res=obj.countSort(ar);
+        radixSort(ar);
         System.out.println();
-        PrintArray(obj.countSort(ar));
+        PrintArray(ar);
 
     }
     void BubbleSort(int arr[]){
@@ -96,5 +97,60 @@ public class L39andL40 {
             res[countVal]=val;
         }
         return res;
+    }
+
+    public static void countSortWithDigit(int[] arr,int digit){
+        int n=arr.length;
+        int k=9;
+        int res[]=new int[n];
+       
+        if (k==-1) {
+           return ; 
+        }
+        int countArray[]=new int[k+1];
+
+        //find the frequency of digits
+        for(int i=0;i<n;i++){
+            int index=(arr[i]/digit)%10;
+            System.out.println("element is "+arr[i]+" digit is "+digit);
+            countArray[index]++;
+        }
+
+        //find cumulative frequency
+        for(int i=1;i<=k;i++){
+            countArray[i]=countArray[i]+countArray[i-1];
+        }
+        PrintArray(countArray);
+        //find sorted array
+        for(int i =n-1;i>=0;i--){
+            int val=arr[i];
+            System.out.println("Value is "+val);
+            int countIndex=(arr[i]/digit)%10;
+            System.out.println("index in count array "+countIndex);
+            int countVal=--countArray[val];
+            System.out.println("Element "+val+"placed at index "+countVal);
+            res[countVal]=val;
+        }
+        //coppy back to original array
+        for(int j=0;j<n;j++){
+            arr[j]=res[j];
+        }
+        PrintArray(arr);
+    }
+    public static void radixSort(int arr[]){
+        int n= arr.length;
+        int maxEl=Integer.MIN_VALUE;
+        for(int i=0 ;i<n ;i++){
+            if (arr[i]>maxEl) {
+                maxEl=arr[i];
+            }
+        }
+       if (maxEl==Integer.MIN_VALUE) {
+        System.out.println("Empty array");
+        return;
+       }
+       for(int digit=1;maxEl/digit>0;digit*=10){
+        countSortWithDigit(arr, digit);
+       }
     }
 }
