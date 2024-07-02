@@ -15,9 +15,9 @@ public class L39andL40 {
         
         PrintArray(ar);
         //  res=obj.countSort(ar);
-        radixSort(ar);
+        
         System.out.println();
-        PrintArray(ar);
+        PrintArray(pigeonSort(ar));
 
     }
     void BubbleSort(int arr[]){
@@ -153,4 +153,44 @@ public class L39andL40 {
         countSortWithDigit(arr, digit);
        }
     }
+
+    public static int[] pigeonSort(int[] arr) {
+        int n = arr.length;
+        int minEL = Integer.MAX_VALUE;
+        int maxEL = Integer.MIN_VALUE;
+        
+        // Find the minimum and maximum elements in the array
+        for (int i = 0; i < n; i++) {
+            if (minEL > arr[i]) {
+                minEL = arr[i];
+            }
+            if (maxEL < arr[i]) {
+                maxEL = arr[i];
+            }
+        }
+        
+        // Create a counting array
+        int range = maxEL - minEL + 1;
+        int[] count = new int[range];
+        
+        // Populate the counting array
+        for (int i = 0; i < n; i++) {
+            int index = arr[i] - minEL;
+            count[index]++;
+        }
+        
+        // Create the sorted array
+        int[] sorted = new int[n];
+        int k = 0;
+        for (int i = 0; i < range; i++) {
+            while (count[i] > 0) {
+                sorted[k] = minEL + i;
+                k++;
+                count[i]--;
+            }
+        }
+        
+        return sorted;
+    }
+    
 }
