@@ -1,4 +1,4 @@
-package l8;
+package L08;
 //this file consists of control flow statement
 
 

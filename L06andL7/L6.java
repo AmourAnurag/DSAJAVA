@@ -1,4 +1,4 @@
-package L6andL7;
+package L06andL7;
 
 import java.util.Scanner;
 

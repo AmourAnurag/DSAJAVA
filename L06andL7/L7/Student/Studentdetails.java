@@ -1,6 +1,6 @@
-package L6andL7.L7.Teacher;
+package L06andL7.L7.Student;
 
-public class Teacherdetails {
+public class Studentdetails{
     public void print() {
         System.out.println("I am a teacher class");
     }

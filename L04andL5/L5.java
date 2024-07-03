@@ -1,4 +1,4 @@
-package L4andL5;
+package L04andL5;
 
 public class L5 {
     static int cop = 30;
