@@ -34,9 +34,20 @@ public class L50 {
         //string formatting 
         int rollNum=8569;
 
-        String name="  Ram  ";
+        String name="Ram";
         System.out.println(name);
         String data=String.format("Name is %2$s and age is %1$d", rollNum,name);
         System.out.println(data);
+        SubString(name);
+        
+    }
+
+    static void SubString(String str){
+        int n=str.length();
+        for (int i = 0; i < n; i++) {
+            for (int j = i+1; j <=n; j++) {
+                System.out.println(str.substring(i,j));
+            }
+        }
     }
 }
