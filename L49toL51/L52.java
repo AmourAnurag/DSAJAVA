@@ -28,10 +28,38 @@ public class L52 {
         System.out.println(ans);
     }
 
+    // *************************************  palindrome of string  *****************************************
+     //first method by reversing the string 
+     static void palindrome(String str) {
+        StringBuilder ans = new StringBuilder(str);
+        int n = ans.length();
+        for (int i = 0; i < n / 2; i++) {
+            char firstChar = ans.charAt(i);
+            char lastChar = ans.charAt(n - 1 - i);
+            ans.setCharAt(i, lastChar);
+            ans.setCharAt(n - 1 - i, firstChar);
+        }
+        System.out.println(str.equals(ans.toString()));
+    }
+
+    //second way to check palindrome string
+    static void palindrome2(String str){
+        int start=0;
+        int end=str.length()-1;
+        while (start<end) {
+            if (str.charAt(start)!=str.charAt(end)) {
+                System.out.println("Not palindrome"); return ;
+            }
+            start++;
+            end--;
+        }
+        System.out.println("Yes palindrome");
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the String ");
         String str = sc.next();
-        reverse2(str);
+        palindrome2(str);
     }
 }
