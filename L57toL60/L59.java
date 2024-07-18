@@ -1,6 +1,6 @@
-//minimum traversal required for balanace the open and close bracket
 
 import java.util.Stack;
+// minimum traversal required for balanace the open and close bracket
 
 public class L59 {
 
