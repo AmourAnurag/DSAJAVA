@@ -34,5 +34,13 @@ public class queueAndDeque {
 
 
         //implementing of the priority queue
+        Queue<Integer>pq=new PriorityQueue<>();
+        pq.offer(5);
+        pq.offer(15);
+        pq.offer(25);
+        pq.offer(55);
+        pq.offer(53);
+        System.out.println(pq);
+        
     }
 }
