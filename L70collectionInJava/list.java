@@ -83,6 +83,23 @@ public class list {
         //to checking the size of the stack
         System.out.println(stack.pop() + " " +stack.size());
 
+
+
+        System.out.println("Creating list using linked list");
+        List<Integer> list2=new LinkedList<>();
+        //it works like a arraylist
+        list2.add(8);
+        list2.add(18);
+        list2.add(28);
+        list2.add(38);
+        System.out.println(list2);
+        System.out.println(list2.getFirst());
+
+        list2.remove(2);
+        list2.removeFirst();
+        System.out.println(list2);
+
+
     }
 
     static class Student {
