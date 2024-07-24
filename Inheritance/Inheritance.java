@@ -8,13 +8,21 @@ class Car{
     }
 
 }
-class Car1 extends Car{
+class Car1 extends Car{  //single level of inheritance
     String company;
     public void speed(){
         System.out.println("Speed of the car is 120km ");
     }
 }
-public class Inheritance extends Car1{
+
+class Car3 extends Car{ // example of hierarchical inheritance and single inheritance because Car is extends by two subclasses
+    int numGear=9;
+    int passengerSeat;
+    void AC(){
+        System.out.println("AC of the car is already on ");
+    }
+}
+public class Inheritance extends Car1{  //multilevel inheritance
 
     public static void main(String args[]){
 
@@ -32,6 +40,12 @@ public class Inheritance extends Car1{
 
      obj.speed();
      obj.driving();
+
+     //creating the object of third CAR
+     Car3 obj3=new Car3();
+     obj3.color="Blue";
+    System.out.println("Color of the car is "+obj3.color);
+    obj.driving();
 
     }
 }
