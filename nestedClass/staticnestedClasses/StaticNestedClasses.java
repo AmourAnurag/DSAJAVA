@@ -1,4 +1,4 @@
-package nestedClass;
+package nestedClass.staticnestedClasses;
 
 class outerClass{
     static int outer_x=10;
