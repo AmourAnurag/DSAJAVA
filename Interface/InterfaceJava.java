@@ -9,7 +9,7 @@ class Honda implements Bike{
        System.out.println("Bike is running at the port 8001");
    }
    void printHello(){
-    System.out.println("this is the methos of the honda class");
+    System.out.println("this is the method of the honda class");
    }
 }
 interface Hero extends Bike{
