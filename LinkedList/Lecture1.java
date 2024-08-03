@@ -27,9 +27,23 @@ public class Lecture1 {
      obj.printList();
      obj.InsertSpecific(98,1);
      obj.printList();
+     obj.deleteSpecific(2);
+     obj.printList();
+    //  obj.deleteBegin();
+    // //  obj.printList();
+    // //  obj.deleteBegin();
+    //  obj.printList();
+    //  obj.deleteLast();
+    //  obj.printList();
+    //  obj.deleteLast();
+    //  obj.printList();
     }
 
     public void printList(){
+        if (head==null) {
+            System.out.println("List is empty ");
+            return;
+        }
         Node temp=head;
         while(temp!=null){
             System.out.println("data is -> "+temp.data);
@@ -88,5 +102,51 @@ public class Lecture1 {
           System.out.println("data is added");
     }
    
+    public void deleteBegin(){
+        if (head==null) {
+            System.out.println("Deletion is not possible");
+            return;
+        }
+        Node temp=head;
+        System.out.println("Deleted element is  "+temp.data);
+        head=head.next;
+        temp.next=null; //derefernce memory
+        size--;
+
+    }
+
+    public void deleteLast(){
+        if (head==null) {
+            System.out.println("Deletion is not possible");
+            return;
+        }
+        Node temp=head;
+        Node rev=temp;
+        while (temp.next!=null) {
+            rev=temp;
+            temp=temp.next;
+        }
+        size--;
+        System.out.println("deleted element is "+temp.data);
+        rev.next=null;
+    }
+
+    public void deleteSpecific(int position){
+        if (position>size || position <0) {
+            System.out.println("Position is invalid can not delete any element");
+            return;
+        }
+        Node prev=head;
+        Node current=prev;
+        int counter=0;
+        while (counter <position-1) {
+            counter++;
+            prev=current;
+            current=prev.next;
+        }
+        prev.next=current.next;
+        current.next=null;
+        System.out.println("Element is deleted "+current.data);
+    }
 }
 
